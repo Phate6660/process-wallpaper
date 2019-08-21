@@ -1,14 +1,12 @@
 #!/bin/bash
-WALLPAPER_PATH="$(pwd)/wallpaper.png"
 
+## Set wallpaper for monitor 1 with Nitrogen.
 
-if command -v gsettings
-then
-  gsettings set org.gnome.desktop.background picture-uri "file://$WALLPAPER_PATH"
-elif command -v feh
-then
-  feh --bg-fill $WALLPAPER_PATH
-else
-  echo "ERROR: Unable to automatically set wallpaper on your system. Manually set your wallpaper to ${WALLPAPER_PATH}."
-fi
+# cd to path with script and wallpaper.
+cd "/home/valley/downloads/github/process-wallpaper" || echo "Could not find that directory."
 
+# Generate new wallpaper.
+updateWallpaper.sh
+
+# Set wallpaper
+nitrogen --head=0 --set-zoom "wallpaper.png"
