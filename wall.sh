@@ -9,5 +9,5 @@ setWallpaper.sh
 
 while true; do
     sleep 5m
-	setWallpaper.sh
+    setWallpaper.sh
 done
